@@ -59,6 +59,7 @@ public final class GeneralService {
      * @throws Throwable
      */
     public static Object invoke(Refrence refrence, String methodName, Class[] argTypes, Object[] args, Class<?> returnType) throws Throwable {
+        refrence.getRefrences();//获取引用的对象
         return new ServiceHandler(refrence).invoke(methodName, argTypes, args, returnType);
     }
 
