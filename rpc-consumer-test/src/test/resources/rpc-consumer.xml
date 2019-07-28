@@ -22,5 +22,5 @@
     <rpc:refrence id="nameService" name="com.kangyonggan.rpc.service.NameService" timeout="500000" async="true"/>
 
     <!--监控-->
-    <rpc:monitor ip="localhost" port="80"/>
+    <rpc:monitor ip="localhost" port="80"/><!--监控端自行实现,web工程-->
 </beans>
