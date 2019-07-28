@@ -16,7 +16,7 @@
     <rpc:register type="zookeeper" ip="localhost" port="2181"/>
 
     <!-- 引用服务 -->
-    <rpc:refrence id="userService" name="com.kangyonggan.rpc.service.UserService" timeout="500000"/>
+    <rpc:refrence id="userService" name="com.kangyonggan.rpc.service.UserService" timeout="5000"/>
 
     <!--监控-->
     <rpc:monitor ip="localhost" port="80"/>
