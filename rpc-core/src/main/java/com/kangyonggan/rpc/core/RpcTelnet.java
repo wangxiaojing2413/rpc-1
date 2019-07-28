@@ -13,6 +13,7 @@ import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.Delimiters;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.timeout.ReadTimeoutHandler;
 import org.apache.log4j.Logger;
 
 /**
@@ -54,6 +55,8 @@ public class RpcTelnet extends Thread {
                             // 编码
                             ch.pipeline().addLast(new StringEncoder());
 
+                            //超时
+                            ch.pipeline().addLast(new ReadTimeoutHandler(500));
                             // 收发消息
                             ch.pipeline().addLast(new RpcTelnetHandler(port));
                         }

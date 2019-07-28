@@ -22,4 +22,7 @@
     <!-- NameService服务 -->
     <rpc:service id="nameService" name="com.kangyonggan.rpc.service.NameService" ref="nameServiceImpl"/>
     <bean id="nameServiceImpl" class="com.kangyonggan.rpc.service.impl.NameServiceImpl" />
+
+    <!--服务治理-->
+    <rpc:telnet id="telnet" port="9876"/>
 </beans>
