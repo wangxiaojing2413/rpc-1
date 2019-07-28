@@ -1,6 +1,7 @@
 package com.kangyonggan.rpc.core;
 
 import com.kangyonggan.rpc.constants.RpcPojo;
+import com.kangyonggan.rpc.handler.RpcTelnetHandler;
 import com.kangyonggan.rpc.pojo.Monitor;
 import com.kangyonggan.rpc.util.SpringUtils;
 import io.netty.bootstrap.Bootstrap;
@@ -60,7 +61,7 @@ public class MonitorClient {
 
                 ch.pipeline().addLast(new ObjectEncoder());
 
-                ch.pipeline().addLast(new ReadTimeoutHandler(5000, TimeUnit.MILLISECONDS));
+                ch.pipeline().addLast(new ReadTimeoutHandler(5000000, TimeUnit.MILLISECONDS));
 
                 // 收发消息
                 ch.pipeline().addLast(new ChannelInboundHandlerAdapter());

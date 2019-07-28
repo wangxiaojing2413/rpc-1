@@ -1,5 +1,7 @@
 package com.kangyonggan.rpc;
 
+import com.kangyonggan.rpc.core.RpcContext;
+import com.kangyonggan.rpc.service.NameService;
 import com.kangyonggan.rpc.service.UserService;
 import com.kangyonggan.rpc.util.SpringUtils;
 import org.junit.Assert;
@@ -28,7 +30,10 @@ public class ConsumerTest {
     @Test
     public void testRemoteCall() throws Throwable {
         UserService userService = SpringUtils.getApplicationContext().getBean("userService", UserService.class);
+//        NameService nameService = SpringUtils.getApplicationContext().getBean("nameService", NameService.class);
         boolean exists = userService.existsMobileNo("18516690317");
+//        String name = nameService.getName();
+//        System.out.println(RpcContext.getFutureTask().get());//测试异步调用结果返回
         Assert.assertTrue(exists);
         System.in.read();
     }
