@@ -33,8 +33,12 @@ public class ConsumerTest {
 //        NameService nameService = SpringUtils.getApplicationContext().getBean("nameService", NameService.class);
         boolean exists = userService.existsMobileNo("18516690317");
 //        String name = nameService.getName();
-//        System.out.println(RpcContext.getFutureTask().get());//测试异步调用结果返回
-        Assert.assertTrue(exists);
+//        Assert.assertTrue(exists);
+        /*异步调用测试
+        Assert.assertFalse(exists);
+        exists = (boolean) RpcContext.getFutureTask().get().get();//当前线程对象中获取异步结果
+        RpcContext.getFutureTask().remove();
+        */
         System.in.read();
     }
 
