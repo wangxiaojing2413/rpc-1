@@ -107,8 +107,8 @@ public class ServiceHandler implements InvocationHandler {
         Date beginTime = new Date();
 
         try {
-            RpcClient rpcClient = new RpcClient(refrence);
-            Service service = rpcClient.connectRemoteService();
+            RpcClient rpcClient = new RpcClient(refrence);//客户端调用对象，创建到Server的连接
+            Service service = rpcClient.connectRemoteService();//创建到Server的连接
             request.setService(service);
             response = rpcClient.remoteCall(request);
             return response.getResult();
